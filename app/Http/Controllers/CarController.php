@@ -15,8 +15,12 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        $car = DB::select('select * from cars');
+  
+        return view('cars.index', compact('car'));
     }
+    
+    
     /**
      * Show the form for creating a new resource.
      *
