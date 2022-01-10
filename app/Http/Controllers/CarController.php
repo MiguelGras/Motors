@@ -86,6 +86,8 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        $car = DB::select('DELETE FROM `cars` where id = ?', [$car->id]);
+  
+        return redirect("/cars");
     }
 }
